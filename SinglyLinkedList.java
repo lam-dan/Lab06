@@ -52,32 +52,102 @@ public class SinglyLinkedList extends Currency {
 		this.end = end;
     }
 	 
-	
-	public void addCurrency(Currency obj, LinkNode index) {
-		//Currency add = new Currency();
-		//int position = index - 1;
-		//Currency current = 
-	   
-	}
-	   
-	public void removeCurrency(Currency obj) {
+//Add Nodes to the linked list in front
+	public void prepend(Currency obj){
 		LinkNode node = new LinkNode(obj);
-		if (isListEmpty()) {
-			start = node;
-			end = node;
+		if(isListEmpty()){
+			this.start = node;
+			this.end = this.start;
 		} else {
-			end.setNext(node);
+			node.setNext(this.start);
+			this.start = node;
 		}
-		end = node;
 		count++;
 	}
+
+	//Add Nodes to the linked list in back	
+	public void append(Currency obj){
+		LinkNode node = new LinkNode(obj);
+		if(isListEmpty()){
+			this.start = node;
+			this.end = node;
+		} else {
+			this.end.setNext(node);
+		}
+		this.end = node;
+		count++;
+	}
+	
+	
+	public void addCurrency(Currency obj, int index) {
+	//	LinkNode node = start;
+		if( index < 0 ){
+			System.out.println("This index is invalid.");
+			return;
+		}
+		if ( index == 0 ){
+			this.prepend(obj);
+		} else {
+
+			while(index != -1){
+				index--;
+				if( index == 0){
+					LinkNode newNode = new LinkNode(obj);
+					newNode.next = start.next;
+					start.next = newNode;
+					break;
+				}
+			}
+		}
 	   
-	public void removeCurrencyOverload(LinkNode index) {
-		   
 	}
 	   
-	public void findCurrency(Currency obj) {
-		   
+	public Currency removeCurrency(Currency obj) {
+		LinkNode node = this.start;
+		int index = 0;
+		
+		while(!obj.isEqual(node.getData())){
+			node = node.getNext();
+			index++;
+		}
+		Currency currencyRef = removeCurrency(index);
+		return currencyRef;
+	}
+	   
+	public Currency removeCurrency(int index) {
+		if (index < 0 || index >= count) {
+			throw new IndexOutOfBoundsException();
+		}
+		LinkNode node = start;
+		for (int i = 0; i < index-1; i++) {
+			node = node.getNext();
+        }
+        if( index == 0){
+			start = node.getNext();
+		} else {
+			LinkNode next = node.getNext().getNext();
+			node.next = next;
+			return node.getData();
+		}
+		return node.getData();
+	}
+	   
+	public int findCurrency(Currency obj) {
+		int index = 0;
+		LinkNode node = this.start;
+		while(node != null){
+			if(obj.isEqual(node.getData())){
+				//String s = "Found " + obj.print() + " at index " + index;
+			//	System.out.println(s);
+				return index;
+			}
+			index++;
+			node = node.getNext();
+		}
+
+		//	System.out.println("Did not find " + obj.print()+ " at any index.");
+
+		return -1; 
 	}
 	   
 	public LinkNode getCurrency(int index) {
@@ -105,13 +175,15 @@ public class SinglyLinkedList extends Currency {
 				printString.append("   ");
 			}
 		}
-		return printString.toString();
+		 printString.toString();
+		 String r = new String(printString);
+		 return r;
 
 		  
 	}
 	   
 	public boolean isListEmpty() {
-		return getCount() == 0;
+		return this.start == null;
 	}
 	   
 	public int countCurrency() {
