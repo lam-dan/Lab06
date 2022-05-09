@@ -161,10 +161,11 @@ public abstract class Currency {
 	 * The print method prints the name and value of the currency object in the form xx.yy, 
 	 * followed by either dollar or pound, whichever is specified.
 	 * 
+	 * Change for Lab 3: Changed return type to String to use in SinglyLinkedList
 	 * Pre: None
 	 * Post: The name and value of the currency object is printed, along with the appropriate currency name.
 	 */
-	public void print(){
+	public String print(){
 		String coinString = String.valueOf(this.coinValue);
 		if(this.coinValue == 0){
 			coinString = "00";
@@ -172,6 +173,6 @@ public abstract class Currency {
 		else if( coinString.length() > 2){
 			coinString = coinString.substring(coinString.length() - 2);
 		}
-		System.out.print(this.noteValue + "." + coinString);
+		return this.noteValue + "." + coinString;
 	}
 }
