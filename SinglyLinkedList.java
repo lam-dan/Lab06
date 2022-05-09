@@ -164,22 +164,16 @@ public class SinglyLinkedList extends Currency {
 		return node;
 	}
 	   
-	public String printList() {
-		StringBuilder printString = new StringBuilder("");
-		LinkNode node1 = start;
-		
-		while (node1 != null) {
-			printString.append(node1.getData());
-			node1 = node1.getNext();
-			if (node1 != null) {
-				printString.append("   ");
-			}
-		}
-		 printString.toString();
-		 String r = new String(printString);
-		 return r;
-
-		  
+	public void printList() {
+		StringBuilder sb = new StringBuilder("");
+		LinkNode node = this.start;
+			while (node != null) {
+				sb.append(node.getData().print());
+				System.out.print(node.getData().getNoteValue() + "." + node.getData().getCoinValue() + " ");
+				node = node.getNext();
+				if(node!=null)
+				sb.append("	");
+			} 
 	}
 	   
 	public boolean isListEmpty() {
