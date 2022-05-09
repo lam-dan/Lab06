@@ -96,13 +96,14 @@ public class Dollar extends Currency{
 	 * The print method prints the name and value of the dollar currency object in the form xx.yy, 
 	 * followed by dollar
 	 * 
+	 * Change for Lab 3: Changed return type to String to use in SinglyLinkedList
 	 * Pre: None
 	 * Post: The name and value of the currency object is printed, along with dollar as the currency name.
 	 */
     @Override
-    public void print() {
+    public String print() {
 		super.print();
-		System.out.print(" " + this.getName() + " ");
+		return " " + this.getName() + " ";
 	}
 	
 
