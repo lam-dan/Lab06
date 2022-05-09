@@ -1,7 +1,6 @@
 public class Lab03Main {
 	
-	public static void main(String [] args){
-		System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
+	System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
 		
 		// Initializing Pound and Dollar in currencies array
 		Currency[] currencies = new Currency[20];
@@ -47,6 +46,10 @@ public class Lab03Main {
 		linkedList.addCurrency(currencies[11], 1);
 	//	linkedList.printList();
 		
+		System.out.println();
+		System.out.println();
+		
+		
 		
 		
 		Stack stack = new Stack();
@@ -58,15 +61,19 @@ public class Lab03Main {
 		stack.push(currencies[18]);
 		stack.push(currencies[19]);
 		System.out.println("Printing stack after pushing seven (7) objects starting from the array index 13 onwards to the stack.");
-		System.out.println(stack.printStack());
+		stack.printStack();
+		System.out.println();
+		
 		System.out.println("Printing result after peek the top of the stack");
-		System.out.println(stack.peek().print());
+		System.out.println(stack.peek());
+		System.out.println();
 		
 		stack.pop();
 		stack.pop();
 		stack.pop();
 		System.out.println("Printing stack after performing three (3) pops in succession");
-		System.out.println(stack.printStack());
+		stack.printStack();
+		System.out.println();
 		
 		stack.push(currencies[0]);
 		stack.push(currencies[1]);
@@ -78,7 +85,48 @@ public class Lab03Main {
 		stack.pop();
 		
 		System.out.println("Printing stack after Push five (5) more objects from the start of the objects array to the stack and Pop twice in succession.");
-		System.out.println(stack.printStack());
+		stack.printStack();
+		System.out.println();
+		
+		
+		
+		
+		Queue queue = new Queue();
+		queue.enqueue(currencies[5]);
+		queue.enqueue(currencies[7]);
+		queue.enqueue(currencies[9]);
+		queue.enqueue(currencies[11]);
+		queue.enqueue(currencies[13]);
+		queue.enqueue(currencies[15]);
+		queue.enqueue(currencies[17]);
+		System.out.println("Printing queue after Enqueue the seven (7) objects at odd indexes starting from index 5 in the array.");
+		queue.printQueue();
+		System.out.println();
+		
+		
+		System.out.println("Printing queue after Peek the front and end of the queue");
+		System.out.println(queue.peekFront());
+		System.out.println(queue.peekRear());
+		System.out.println();
+		
+		queue.dequeue();
+		queue.dequeue();
+		System.out.println("Printing queue after perform two (2) dequeues in succession");
+		queue.printQueue();
+		System.out.println();
+		
+		queue.enqueue(currencies[10]);
+		queue.enqueue(currencies[11]);
+		queue.enqueue(currencies[12]);
+		queue.enqueue(currencies[13]);
+		queue.enqueue(currencies[14]);
+		
+		queue.dequeue();
+		queue.dequeue();
+		queue.dequeue();
+		System.out.println("Printing queue after Enqueue five (5) more objects from the index 10 in the array and Dequeue three times in succession.");
+		queue.printQueue();
+		System.out.println();
 	}
 
 
