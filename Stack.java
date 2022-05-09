@@ -1,4 +1,3 @@
-
 public class Stack extends SinglyLinkedList{
 
 	public Stack() {
@@ -7,33 +6,42 @@ public class Stack extends SinglyLinkedList{
 	}
 	
 	public void push(Currency obj) {
-		append(obj);
+		LinkNode node1 = new LinkNode(obj);
+		node1.setNext(getStart());
+		setStart(node1);
+		setCount(getCount() + 1);
     }
 	
-	public void pop() {
-		
-			
-     }
-	
-	public LinkNode peek() {
+	public Currency pop() {
 		if (isListEmpty()) {
 			return null;
 		}
         else {
-            return getStart();
+        	Currency result = getStart().getData();
+        	setStart(getStart().getNext());
+        	setCount(getCount() - 1);
+        	return result;
+        }
+			
+     }
+	
+	public Currency peek() {
+		if (isListEmpty()) {
+			return null;
+		}
+        else {
+            return getStart().getData();
         }
     }
 	
-	public void printStack()  {
-		LinkNode currentNode = getStart();
-        System.out.println("Printing Current Stack");
-        //as long as the node is not null do the following:
-        while (currentNode != null) {
-        	currentNode.getData().print();
-            System.out.println(currentNode.getData().getNoteValue()+ " Dollar " + currentNode.getData().getCoinValue() + " Cent");
-            currentNode = currentNode.next;
-        }
-        System.out.println();
+	public String printStack()  {
+		 String result = "";
+	        LinkNode current = getStart();
+	        while (current != null) {
+	            result = result + current.toString() + "\n";
+	            current = current.getNext();
+	        }
+	        return result;
     }
 
 }
