@@ -1,7 +1,7 @@
 public class Queue extends SinglyLinkedList{
 
 	public Queue() {
-		super();
+		
 	}
 	
 	public void enqueue(Currency object) {
@@ -45,13 +45,11 @@ public class Queue extends SinglyLinkedList{
         return getEnd().getData();
 	}
 	
-	public String printQueue()  {
-		String result = "";
-        LinkNode current = getStart();
-        while (current != null){
-            result = result + current.toString() + "\n";
-            current = current.getNext();
-        }
-        return result;
+	public void printQueue()  {
+		LinkNode current = getStart();
+		while (current != null) {
+			System.out.println(current.getData() + " ");
+			current = current.next;
+		}
     }
 }
