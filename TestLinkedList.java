@@ -1,7 +1,8 @@
-public class Lab03Main {
+public class TestLinkedList {
 	
-	System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
-		
+	public static void main(String [] args){
+		System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
+		System.out.println();
 		// Initializing Pound and Dollar in currencies array
 		Currency[] currencies = new Currency[20];
 		currencies[0] = new Dollar(57.12);
@@ -33,18 +34,31 @@ public class Lab03Main {
 		linkedList.prepend(currencies[4]);
 		linkedList.prepend(currencies[5]);
 		linkedList.prepend(currencies[6]);
-		System.out.println(linkedList.printList());
+		System.out.println("Printing list after Add the first seven (7) objects from the array into the linked list in order such that they end up in the reverse order in the linked list");
+		linkedList.printList();
+		System.out.println();
+		System.out.println();
+		
 		linkedList.findCurrency(new Dollar(87.43));
 		linkedList.findCurrency(new Dollar(44.56));
+		System.out.println("Printing results for Search for $87.43 followed by $44.56");
+		linkedList.printList();
+		System.out.println();
+		System.out.println();
+		
 		linkedList.removeCurrency(new Dollar(111.22));
 		linkedList.removeCurrency(2);
-		//linkedList.printList();
+		System.out.println("Printing list after Remove the node containing $111.22 followed by the node at index 2.");
+		linkedList.printList();
+		System.out.println();
+		System.out.println();
 		
 		linkedList.addCurrency(currencies[8], 3); 
 		linkedList.addCurrency(currencies[9], 4);
 		linkedList.addCurrency(currencies[10], 0);
 		linkedList.addCurrency(currencies[11], 1);
-	//	linkedList.printList();
+		System.out.println("Printing list after Then add the next five (5) four (4) objects (#9 thru 12) such that their index in the linked list is calculated as (index in array % 5) and Remove two (2) objects at indexes (countCurrency % 6) and (countCurrency / 7) in that order.");
+	        linkedList.printList();
 		
 		System.out.println();
 		System.out.println();
@@ -63,6 +77,7 @@ public class Lab03Main {
 		System.out.println("Printing stack after pushing seven (7) objects starting from the array index 13 onwards to the stack.");
 		stack.printStack();
 		System.out.println();
+		System.out.println();
 		
 		System.out.println("Printing result after peek the top of the stack");
 		System.out.println(stack.peek());
@@ -73,6 +88,7 @@ public class Lab03Main {
 		stack.pop();
 		System.out.println("Printing stack after performing three (3) pops in succession");
 		stack.printStack();
+		System.out.println();
 		System.out.println();
 		
 		stack.push(currencies[0]);
@@ -87,7 +103,7 @@ public class Lab03Main {
 		System.out.println("Printing stack after Push five (5) more objects from the start of the objects array to the stack and Pop twice in succession.");
 		stack.printStack();
 		System.out.println();
-		
+		System.out.println();
 		
 		
 		
@@ -102,17 +118,19 @@ public class Lab03Main {
 		System.out.println("Printing queue after Enqueue the seven (7) objects at odd indexes starting from index 5 in the array.");
 		queue.printQueue();
 		System.out.println();
-		
+		System.out.println();
 		
 		System.out.println("Printing queue after Peek the front and end of the queue");
 		System.out.println(queue.peekFront());
 		System.out.println(queue.peekRear());
 		System.out.println();
 		
+		
 		queue.dequeue();
 		queue.dequeue();
 		System.out.println("Printing queue after perform two (2) dequeues in succession");
 		queue.printQueue();
+		System.out.println();
 		System.out.println();
 		
 		queue.enqueue(currencies[10]);
@@ -126,6 +144,7 @@ public class Lab03Main {
 		queue.dequeue();
 		System.out.println("Printing queue after Enqueue five (5) more objects from the index 10 in the array and Dequeue three times in succession.");
 		queue.printQueue();
+		System.out.println();
 		System.out.println();
 	}
 
