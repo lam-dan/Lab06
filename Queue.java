@@ -1,11 +1,10 @@
 public class Queue extends SinglyLinkedList{
 
 	public Queue() {
-		
 	}
 	
-	public void enqueue(Currency object) {
-		LinkNode node1 = new LinkNode(object);
+	public void enqueue(Currency obj) {
+		LinkNode node1 = new LinkNode(obj);
 		if (isListEmpty()) {
 			setStart(node1);
 		} else {
@@ -13,9 +12,6 @@ public class Queue extends SinglyLinkedList{
 		}
 		setEnd(node1);
 		setCount(getCount() + 1);
-		
-		
-		//this.add(object);
     	}
 	
 	public Currency dequeue() {
@@ -35,6 +31,7 @@ public class Queue extends SinglyLinkedList{
 		if (isListEmpty()) {
             return null;
         }
+        System.out.println(getStart().getData().printCurrency());
         return getStart().getData();
 	}
 	
@@ -42,14 +39,15 @@ public class Queue extends SinglyLinkedList{
 		if (isListEmpty()) {
             return null;
         }
+        System.out.println(getEnd().getData().printCurrency());
         return getEnd().getData();
 	}
 	
 	public void printQueue()  {
 		LinkNode current = getStart();
 		while (current != null) {
-			current.getData().print();
-			System.out.print(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + " ");
+			current.getData().printCurrency();
+			System.out.print(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + "	");
 			current = current.next;
 		}
     	}

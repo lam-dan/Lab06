@@ -30,6 +30,7 @@ public class Stack extends SinglyLinkedList{
 			return null;
 		}
         else {
+			System.out.println(getStart().getData().printCurrency());
             return getStart().getData();
         }
     }
@@ -38,8 +39,8 @@ public class Stack extends SinglyLinkedList{
 		LinkNode current = getStart();
 		
 		while (current != null) {
-			current.getData().print();
-			System.out.print(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + " ");
+			current.getData().printCurrency();
+			System.out.print(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + "	");
 			current = current.next;
 		}
     }

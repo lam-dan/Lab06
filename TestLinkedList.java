@@ -34,36 +34,43 @@ public class TestLinkedList {
 		linkedList.prepend(currencies[4]);
 		linkedList.prepend(currencies[5]);
 		linkedList.prepend(currencies[6]);
-		System.out.println("Printing list after Add the first seven (7) objects from the array into the linked list in order such that they end up in the reverse order in the linked list");
+		System.out.println("Printing list after adding first seven (7) objects from the array into the linked list in reverse order.");
 		linkedList.printList();
 		System.out.println();
 		System.out.println();
 		
+		System.out.println("Searching for $87.43.");
 		linkedList.findCurrency(new Dollar(87.43));
+		System.out.println("Searching for $44.56.");
 		linkedList.findCurrency(new Dollar(44.56));
-		System.out.println("Printing results for Search for $87.43 followed by $44.56");
-		linkedList.printList();
+		
 		System.out.println();
 		System.out.println();
 		
+		System.out.println("Removing node containing $111.22");
 		linkedList.removeCurrency(new Dollar(111.22));
+		System.out.println("Removing node at index 2");
 		linkedList.removeCurrency(2);
 		System.out.println("Printing list after Remove the node containing $111.22 followed by the node at index 2.");
 		linkedList.printList();
 		System.out.println();
 		System.out.println();
 		
+		System.out.println("Adding four (4) objects (#9 thru 12) such that their index in the linked list is calculated as (index in array % 5)");
 		linkedList.addCurrency(currencies[8], 3); 
 		linkedList.addCurrency(currencies[9], 4);
 		linkedList.addCurrency(currencies[10], 0);
 		linkedList.addCurrency(currencies[11], 1);
-		System.out.println("Printing list after Then add the next five (5) four (4) objects (#9 thru 12) such that their index in the linked list is calculated as (index in array % 5) and Remove two (2) objects at indexes (countCurrency % 6) and (countCurrency / 7) in that order.");
-	        linkedList.printList();
-		
+		System.out.println();
+		System.out.println("Remove two (2) objects at indexes (countCurrency % 6) and (countCurrency / 7) in that order.");
+		System.out.println();
+		int countCurrency = linkedList.countCurrency();
+		linkedList.removeCurrency(2);
+		linkedList.removeCurrency(1);
+		System.out.println("Printing list.");
+	    linkedList.printList();
 		System.out.println();
 		System.out.println();
-		
-		
 		
 		
 		Stack stack = new Stack();
@@ -80,9 +87,10 @@ public class TestLinkedList {
 		System.out.println();
 		
 		System.out.println("Printing result after peek the top of the stack");
-		System.out.println(stack.peek());
+		stack.peek();
 		System.out.println();
 		
+		System.out.println("Popping from the top of the stack.");
 		stack.pop();
 		stack.pop();
 		stack.pop();
@@ -105,8 +113,6 @@ public class TestLinkedList {
 		System.out.println();
 		System.out.println();
 		
-		
-		
 		Queue queue = new Queue();
 		queue.enqueue(currencies[5]);
 		queue.enqueue(currencies[7]);
@@ -121,8 +127,8 @@ public class TestLinkedList {
 		System.out.println();
 		
 		System.out.println("Printing queue after Peek the front and end of the queue");
-		System.out.println(queue.peekFront());
-		System.out.println(queue.peekRear());
+		queue.peekFront();
+		queue.peekRear();
 		System.out.println();
 		
 		
@@ -146,6 +152,8 @@ public class TestLinkedList {
 		queue.printQueue();
 		System.out.println();
 		System.out.println();
+		System.out.println("Testing Linked List Complete. Exiting Program.");
+		
 	}
 
 

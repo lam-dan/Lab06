@@ -23,7 +23,7 @@ public class Dollar extends Currency{
 		this.name = "Dollar";
     }
     
- // Getters and Setters
+	//Getters and Setters
  	/**
  	 * The getter for the Dollar class get & read the currency name which is dollar
  	 * so that they can be manipulated in add/subtract/isEqual/isGreater methods, and elsewhere in the program.
@@ -100,9 +100,7 @@ public class Dollar extends Currency{
 	 * Pre: None
 	 * Post: The name and value of the currency object is printed, along with dollar as the currency name.
 	 */
-    @Override
     public String print() {
-		super.print();
 		return " " + this.getName() + " ";
 	}
 	
