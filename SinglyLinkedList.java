@@ -2,25 +2,49 @@
  * Lab 3
  * @author Daniel Lam, Chitra Srinivasan
  * CS 22C
- * Date: 5/7/22
+ * Date: 5/9/22
  * SinglyLinkedList.java is designed to have the linked-list behaviors
  * that were defined in class, along with a count attribute, LinkNode start and LinkNode end
  * that point to the start and end of the linked list. 
  */
 public class SinglyLinkedList extends Currency {
 
+	/**
+	 * Private attributes count, start of LinkNode (points to start of list) and end of LinkNode (points to end of list)
+	 */
 	private int count;
 	
 	private LinkNode start;
 	
 	private LinkNode end;
 	
+	/**
+	 * Constructor for SinglyLinkedList that creates the list with start, end = null and count = 0.
+	 */
 	public SinglyLinkedList() {
 		start = null;
 		end = null;
 		setCount(0);
 	}
 	
+	// Getters and Setters
+	/**
+	 * The getters for the SinglyLinkedList class get & read the data of the list, 
+	 * and pointer to the next node, so that they can be manipulated in stack & queue methods,
+	 * and elsewhere in the program.
+	 * 
+	 * Pre: None
+	 * Post: the start/end pointer of the list and the count attribute is returned 
+	 */
+	
+	/**
+	 * The setters for the LinkNode class update the data of the list
+	 * and set them so that they can be manipulated in the linked list,
+	 * queue, stack and elsewhere in the program.
+	 * 
+	 * Pre: none
+	 * Post: The position and counter in the linked list is updated/set.
+	 */
 	public int getCount() {
 		return count;
 	}
@@ -52,7 +76,13 @@ public class SinglyLinkedList extends Currency {
 		this.end = end;
     }
 	 
-	//Add Nodes to the linked list in front
+	
+	/**
+	 * Prepend adds the nodes to the linked list in the front.
+	 * 
+	 * Pre: Checks if list is empty
+	 * Post: The prepended list now has nodes in the front
+	 */
 	public void prepend(Currency obj){
 		LinkNode node = new LinkNode(obj);
 		if(isListEmpty()){
@@ -65,7 +95,13 @@ public class SinglyLinkedList extends Currency {
 		count++;
 	}
 
-	//Add Nodes to the linked list in back	
+
+	/**
+	 * Append adds the nodes to the linked list in the back.
+	 * 
+	 * Pre: Checks if list is empty
+	 * Post: The prepended list now has nodes in the back
+	 */
 	public void append(Currency obj){
 		LinkNode node = new LinkNode(obj);
 		if(isListEmpty()){
@@ -78,7 +114,12 @@ public class SinglyLinkedList extends Currency {
 		count++;
 	}
 	
-	
+	/**
+	 * addCurrency adds the Currency object to the list at that specified index
+	 * 
+	 * Pre: Checks if index < 0, if yes, print error message & return.
+	 * Post: Currency object is added to list at the 'index'
+	 */
 	public void addCurrency(Currency obj, int index) {
 		if( index < 0 ){
 			System.out.println("This index is invalid.");
@@ -98,7 +139,13 @@ public class SinglyLinkedList extends Currency {
 			}
 		}
 	}
-	   
+	  
+	/**
+	 * removeCurrency removes that Currency object from the list and returns a copy of the Currency
+	 * 
+	 * Pre: none
+	 * Post: Currency object is removed from the list and a copy of the object is returned
+	 */
 	public Currency removeCurrency(Currency obj) {
 		LinkNode node = this.start;
 		int index = 0;
@@ -111,6 +158,12 @@ public class SinglyLinkedList extends Currency {
 		return currencyRef;
 	}
 	   
+	/**
+	 * removeCurrency overload method removes that Currency object from the list at that index and returns a copy of the Currency.
+	 * 
+	 * Pre: Checks to see if index is < 0 or if index >= count, if yes, throw a index out of bounds exception
+	 * Post: Currency object is removed from the list at specified index and a copy of the object is returned
+	 */
 	public Currency removeCurrency(int index) {
 		if (index < 0 || index >= count) {
 			throw new IndexOutOfBoundsException();
@@ -129,6 +182,12 @@ public class SinglyLinkedList extends Currency {
 		return node.getData();
 	}
 	   
+	/**
+	 * findCurrency method returns the node index at which the Currency is found in the list
+	 * 
+	 * Pre: None
+	 * Post: Index at which the currency object is found at is returned
+	 */
 	public int findCurrency(Currency obj) {
 		int index = 0;
 		LinkNode node = this.start;
@@ -144,6 +203,12 @@ public class SinglyLinkedList extends Currency {
 		return -1; 
 	}
 	   
+	/**
+	 * getCurrency method returns the Currency object
+	 * 
+	 * Pre: Check to see if index is >= the currency of count or if index is < 0, if yes to either, returns null
+	 * Post: Currency object is returned
+	 */
 	public LinkNode getCurrency(int index) {
 		if (index >= countCurrency() || index < 0) {
 			return null;
@@ -158,6 +223,12 @@ public class SinglyLinkedList extends Currency {
 		return node;
 	}
 	   
+	/**
+	  * The printList method returns a string of all the Currency objects in the list in the order of index
+	  * 
+	  * Pre: none
+	  * Post: String with contents of the list is returned in order of the index
+	  */
 	public void printList() {
 		StringBuilder sb = new StringBuilder("");
 		LinkNode node = this.start;
@@ -170,10 +241,22 @@ public class SinglyLinkedList extends Currency {
 			} 
 	}
 	   
+	/**
+	  * isListEmpty method checks to see if the singly linked list is empty
+	  * 
+	  * Pre: none
+	  * Post: true if the singly linked list is empty
+	  */
 	public boolean isListEmpty() {
 		return this.start == null;
 	}
 	   
+	/**
+	  * countCurrency method returns a count of Currency nodes in the list
+	  * 
+	  * Pre: none
+	  * Post: number of currency nodes in the singly linked list
+	  */
 	public int countCurrency() {
 		return getCount();
 		   
