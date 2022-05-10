@@ -1,3 +1,12 @@
+/**
+ * Lab 3
+ * @author Daniel Lam, Chitra Srinivasan
+ * CS 22C
+ * Date: 5/09/22
+ * Lab03Main.java is designed to act as the main program where the different sequence
+ * of operations for Singly Linked List, Stack and Queue are performed on the Dollar and Pound objects, and the results
+ * are printed to the console.
+ */
 public class Lab03Main {
 	
 	public static void main(String [] args){
@@ -67,7 +76,7 @@ public class Lab03Main {
 		linkedList.removeCurrency(2);
 		linkedList.removeCurrency(1);
 		System.out.println("Printing list.");
-	    System.out.println(linkedList.printList());
+		System.out.println(linkedList.printList());
 		System.out.println();
 		System.out.println();
 		
