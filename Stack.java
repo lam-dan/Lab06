@@ -51,15 +51,16 @@ public class Stack extends SinglyLinkedList{
     * Post: Copy of the Currency object is returned to the top of the stack
     */
   public Currency peek() {
-    if (isListEmpty()) {
-      return null;
-    }
-        else {
-            return getStart().getData();
-        }
-    }
+	  if (isListEmpty()) {
+		  return null;
+	  }
+	  else {
+		  return getStart().getData();
+	  }
+	}
+  
     public String toString(Currency obj){
-    return obj.toString();
+    	return obj.toString();
   }
   
   /**
