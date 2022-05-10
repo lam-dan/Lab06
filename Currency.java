@@ -1,8 +1,8 @@
 /**
- * Lab 2
+ * Lab 3
  * @author Daniel Lam, Chitra Srinivasan
  * CS 22C
- * Date: 4/27/22
+ * Date: 5/9/22
  * Currency.java is designed to act as a currency simulator, with two integer 
  * attributes noteValue and coinValue. This class has constructors, getters/setters and methods add, subtract, isEqual
  * and isGreater, which compare and manipulate different currency objects.
@@ -158,8 +158,7 @@ public abstract class Currency {
 	}
 	
 	/**
-	 * The print method prints the name and value of the currency object in the form xx.yy, 
-	 * followed by either dollar or pound, whichever is specified.
+	 * The method print was changed to toString() which prints out the value of the coin + dollar
 	 * 
 	 * Change for Lab 3: Changed return type to String to use in SinglyLinkedList
 	 * Pre: None
