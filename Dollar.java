@@ -1,8 +1,8 @@
 /**
- * Lab 2
+ * Lab 3
  * @author Daniel Lam, Chitra Srinivasan
  * CS 22C
- * Date: 4/27/22
+ * Date: 5/9/22
  * Dollar.java is designed to act as a derived class from Currency. This class 
  * creates a Dollar object that can be manipulated. 
  */
