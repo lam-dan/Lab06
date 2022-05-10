@@ -64,7 +64,6 @@ public class TestLinkedList {
 		System.out.println();
 		System.out.println("Remove two (2) objects at indexes (countCurrency % 6) and (countCurrency / 7) in that order.");
 		System.out.println();
-		int countCurrency = linkedList.countCurrency();
 		linkedList.removeCurrency(2);
 		linkedList.removeCurrency(1);
 		System.out.println("Printing list.");
