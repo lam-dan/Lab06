@@ -173,6 +173,6 @@ public abstract class Currency {
 		else if( coinString.length() > 2){
 			coinString = coinString.substring(coinString.length() - 2);
 		}
-		return this.noteValue + "." + coinString;
+		return this.noteValue + "." + coinString + "	";
 	}
 }

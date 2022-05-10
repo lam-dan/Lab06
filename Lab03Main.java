@@ -1,4 +1,4 @@
-public class TestLinkedList {
+public class Lab03Main {
 	
 	public static void main(String [] args){
 		System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
