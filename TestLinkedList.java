@@ -35,15 +35,15 @@ public class TestLinkedList {
 		linkedList.prepend(currencies[5]);
 		linkedList.prepend(currencies[6]);
 		System.out.println("Printing list after adding first seven (7) objects from the array into the linked list in reverse order.");
-		linkedList.printList();
+		System.out.println(linkedList.printList());
 		System.out.println();
 		System.out.println();
 		
 		System.out.println("Searching for $87.43.");
-		linkedList.findCurrency(new Dollar(87.43));
+		System.out.println("Found $87.43 at index "+ linkedList.findCurrency(new Dollar(87.43)));
 		System.out.println("Searching for $44.56.");
-		linkedList.findCurrency(new Dollar(44.56));
-		
+		System.out.println("Found 44.56 at index " + linkedList.findCurrency(new Dollar(44.56)));
+	
 		System.out.println();
 		System.out.println();
 		
@@ -52,7 +52,7 @@ public class TestLinkedList {
 		System.out.println("Removing node at index 2");
 		linkedList.removeCurrency(2);
 		System.out.println("Printing list after Remove the node containing $111.22 followed by the node at index 2.");
-		linkedList.printList();
+		System.out.println(linkedList.printList());
 		System.out.println();
 		System.out.println();
 		
@@ -67,7 +67,7 @@ public class TestLinkedList {
 		linkedList.removeCurrency(2);
 		linkedList.removeCurrency(1);
 		System.out.println("Printing list.");
-	    linkedList.printList();
+	    System.out.println(linkedList.printList());
 		System.out.println();
 		System.out.println();
 		
@@ -81,12 +81,12 @@ public class TestLinkedList {
 		stack.push(currencies[18]);
 		stack.push(currencies[19]);
 		System.out.println("Printing stack after pushing seven (7) objects starting from the array index 13 onwards to the stack.");
-		stack.printStack();
+		System.out.println(stack.printStack());
 		System.out.println();
 		System.out.println();
 		
 		System.out.println("Printing result after peek the top of the stack");
-		stack.peek();
+		System.out.println(stack.peek().toString());
 		System.out.println();
 		
 		System.out.println("Popping from the top of the stack.");
@@ -94,7 +94,7 @@ public class TestLinkedList {
 		stack.pop();
 		stack.pop();
 		System.out.println("Printing stack after performing three (3) pops in succession");
-		stack.printStack();
+		System.out.println(stack.printStack());
 		System.out.println();
 		System.out.println();
 		
@@ -108,7 +108,7 @@ public class TestLinkedList {
 		stack.pop();
 		
 		System.out.println("Printing stack after Push five (5) more objects from the start of the objects array to the stack and Pop twice in succession.");
-		stack.printStack();
+		System.out.println(stack.printStack());
 		System.out.println();
 		System.out.println();
 		
@@ -121,20 +121,20 @@ public class TestLinkedList {
 		queue.enqueue(currencies[15]);
 		queue.enqueue(currencies[17]);
 		System.out.println("Printing queue after Enqueue the seven (7) objects at odd indexes starting from index 5 in the array.");
-		queue.printQueue();
+		System.out.println(queue.printQueue());
 		System.out.println();
 		System.out.println();
 		
 		System.out.println("Printing queue after Peek the front and end of the queue");
-		queue.peekFront();
-		queue.peekRear();
+		System.out.println(queue.peekFront().toString());
+		System.out.println(queue.peekRear().toString());
 		System.out.println();
 		
 		
 		queue.dequeue();
 		queue.dequeue();
 		System.out.println("Printing queue after perform two (2) dequeues in succession");
-		queue.printQueue();
+		System.out.println(queue.printQueue());
 		System.out.println();
 		System.out.println();
 		
@@ -148,7 +148,7 @@ public class TestLinkedList {
 		queue.dequeue();
 		queue.dequeue();
 		System.out.println("Printing queue after Enqueue five (5) more objects from the index 10 in the array and Dequeue three times in succession.");
-		queue.printQueue();
+		System.out.println(queue.printQueue());
 		System.out.println();
 		System.out.println();
 		System.out.println("Testing Linked List Complete. Exiting Program.");

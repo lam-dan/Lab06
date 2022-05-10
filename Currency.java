@@ -165,7 +165,7 @@ public abstract class Currency {
 	 * Pre: None
 	 * Post: The name and value of the currency object is printed, along with the appropriate currency name.
 	 */
-	public String printCurrency(){
+	public String toString(){
 		String coinString = String.valueOf(this.coinValue);
 		if(this.coinValue == 0){
 			coinString = "00";

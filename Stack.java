@@ -2,7 +2,6 @@ public class Stack extends SinglyLinkedList{
 
 	public Stack() {
 		super();
-		
 	}
 	
 	public void push(Currency obj) {
@@ -16,13 +15,10 @@ public class Stack extends SinglyLinkedList{
 		if (isListEmpty()) {
 			return null;
 		}
-   
         Currency result = getStart().getData();
         setStart(getStart().getNext());
         setCount(getCount() - 1);
         return result;
-        
-			
      }
 	
 	public Currency peek() {
@@ -30,19 +26,22 @@ public class Stack extends SinglyLinkedList{
 			return null;
 		}
         else {
-			System.out.println(getStart().getData().printCurrency());
             return getStart().getData();
         }
     }
+    
+    public String toString(Currency obj){
+		return obj.toString();
+	}
 	
-	public void printStack()  {
+	public String printStack()  {
+		StringBuilder sb = new StringBuilder("");
 		LinkNode current = getStart();
-		
 		while (current != null) {
-			current.getData().printCurrency();
-			System.out.print(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + "	");
+			sb.append(current.getData().toString()+ "	");
 			current = current.next;
 		}
+		return sb.toString();
     }
 
 }

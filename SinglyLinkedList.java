@@ -81,7 +81,6 @@ public class SinglyLinkedList extends Currency {
 	
 	public void addCurrency(Currency obj, int index) {
 		if( index < 0 ){
-			System.out.println("This index is invalid.");
 			return;
 		}
 		if ( index == 0 ){
@@ -134,13 +133,11 @@ public class SinglyLinkedList extends Currency {
 		LinkNode node = this.start;
 		while(node != null){
 			if(obj.isEqual(node.getData())){
-				System.out.println("Found " + obj.printCurrency() + " at index " + index + ".");
 				return index;
 			}
 			index++;
 			node = node.getNext();
 		}
-		System.out.println("Did not find " + obj.printCurrency()+ " at any index.");
 		return -1; 
 	}
 	   
@@ -158,16 +155,20 @@ public class SinglyLinkedList extends Currency {
 		return node;
 	}
 	   
-	public void printList() {
+	public String printList() {
 		StringBuilder sb = new StringBuilder("");
 		LinkNode node = this.start;
 			while (node != null) {
-				sb.append(node.getData().printCurrency());
-				System.out.print(node.getData().getNoteValue() + "." + node.getData().getCoinValue() + "	");
+				sb.append(node.getData().toString());
 				node = node.getNext();
-				if(node!=null)
+				if(node!=null) 
 				sb.append("	");
 			} 
+			return sb.toString();
+	}
+	
+	public String toString(Currency obj){
+		return obj.toString();
 	}
 	   
 	public boolean isListEmpty() {

@@ -31,24 +31,23 @@ public class Queue extends SinglyLinkedList{
 		if (isListEmpty()) {
             return null;
         }
-        System.out.println(getStart().getData().printCurrency());
         return getStart().getData();
 	}
-	
+
 	public Currency peekRear() {
 		if (isListEmpty()) {
             return null;
         }
-        System.out.println(getEnd().getData().printCurrency());
         return getEnd().getData();
 	}
 	
-	public void printQueue()  {
+	public String printQueue()  {
+		StringBuilder sb = new StringBuilder("");
 		LinkNode current = getStart();
 		while (current != null) {
-			current.getData().printCurrency();
-			System.out.print(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + "	");
+			sb.append(current.getData().getNoteValue() + "." + current.getData().getCoinValue() + "	");
 			current = current.next;
 		}
-    	}
+		return sb.toString();
+    }
 }
