@@ -102,7 +102,6 @@ public abstract class Currency {
    */
   public void subtract(Currency obj) {
     if (!this.isGreater(obj) && !this.isEqual(obj)) {
-      System.out.println("Invalid subtraction");
       return;
     }
     this.noteValue -= obj.noteValue;
