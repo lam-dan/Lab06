@@ -93,6 +93,7 @@ public abstract class Currency {
   /**
    * The subtract method subtracts an input object (called obj) of the same
    * currency.
+   * Change for lab3: Removed unnecessary print statement in class.
    * Pre: Check to see if the value of noteValue and coinValue is not greater than
    * and equal to
    * the currency obj. If it is, then it is an invalid subtraction, and the
