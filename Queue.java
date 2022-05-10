@@ -15,7 +15,7 @@ public class Queue extends SinglyLinkedList {
   }
 
   /**
-   * The enqueue method  takes a Currency object as parameter and adds it to the end of the queue
+   * The enqueue method takes a Currency object as parameter and adds it to the end of the queue
    * 
    * Pre: Check to see if the list is empty, if yes, setStart to be node1.
    * Post: Currency object is added to the end of the queue
@@ -92,4 +92,3 @@ public class Queue extends SinglyLinkedList {
     return sb.toString();
   }
 }
-
