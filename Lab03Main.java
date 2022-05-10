@@ -1,4 +1,12 @@
-public class TestLinkedList {
+/**
+ * Lab 3
+ * @author Daniel Lam, Chitra Srinivasan
+ * CS 22C
+ * Date: 5/7/22
+ * Lab03Main.java is designed to act as the main class that performs various operations on an array of currencies. These operations
+ * are performed on a stack, queue and singly linked list.
+ */
+public class Lab03Main {
 	
 	public static void main(String [] args){
 		System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
