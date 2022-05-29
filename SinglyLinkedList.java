@@ -126,6 +126,7 @@ public class SinglyLinkedList extends Currency {
           start.next = newNode;
           break;
         }
+        start = start.next;
       }
     }
   }
