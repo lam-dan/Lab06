@@ -9,7 +9,6 @@ public class BSTNode {
 		this.right = null;
 	}
 	
-	
 	public BSTNode getLeft(){
 		return left;
 	}
@@ -24,6 +23,10 @@ public class BSTNode {
 	
 	public void setRight(BSTNode right){
 		right = right;
+	}
+	
+	public Dollar getData(){
+		return data;
 	}
 	
 	
