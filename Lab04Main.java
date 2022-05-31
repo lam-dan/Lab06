@@ -20,28 +20,57 @@ public class Lab04Main {
     // Initializing Pound and Dollar in currencies array
     BST bst = new BST();
     
-    bst.insert(new Dollar(57.12));
-    bst.insert(new Dollar(23.44));
-    bst.insert(new Dollar(87.43));
-    bst.insert(new Dollar(68.99));
-    bst.insert(new Dollar(111.22));
-    bst.insert(new Dollar(44.55));
-    bst.insert(new Dollar(77.77));
-    bst.insert(new Dollar(18.36));
-    bst.insert(new Dollar(543.21));
-    bst.insert(new Dollar(20.21));
-    bst.insert(new Dollar(345.67));
-    bst.insert(new Dollar(36.18));
-    bst.insert(new Dollar(48.48));
-    bst.insert(new Dollar(101.00));
-    bst.insert(new Dollar(11.00));
-    bst.insert(new Dollar(21.00));
-    bst.insert(new Dollar(51.00));
-    bst.insert(new Dollar(1.00));
-    bst.insert(new Dollar(251.00));
-    bst.insert(new Dollar(151.00));
+    BSTNode node1 = new BSTNode(new Dollar(57.12));
+    BSTNode node2 = new BSTNode(new Dollar(23.44));
+    BSTNode node3 = new BSTNode(new Dollar(87.43));
+    BSTNode node4 = new BSTNode(new Dollar(68.99));
+    BSTNode node5 = new BSTNode(new Dollar(111.22));
+    BSTNode node6 = new BSTNode(new Dollar(44.55));
+    BSTNode node7 = new BSTNode(new Dollar(77.77));
+    BSTNode node8 = new BSTNode(new Dollar(18.36));
+    BSTNode node9 = new BSTNode(new Dollar(543.21));
+    BSTNode node10 = new BSTNode(new Dollar(20.21));
+    BSTNode node11 = new BSTNode(new Dollar(345.67));
+    BSTNode node12 = new BSTNode(new Dollar(36.18));
+    BSTNode node13 = new BSTNode(new Dollar(48.48));
+    BSTNode node14 = new BSTNode(new Dollar(101.00));
+    BSTNode node15 = new BSTNode(new Dollar(11.00));
+    BSTNode node16 = new BSTNode(new Dollar(21.00));
+    BSTNode node17 = new BSTNode(new Dollar(51.00));
+    BSTNode node18 = new BSTNode(new Dollar(1.00));
+    BSTNode node19 = new BSTNode(new Dollar(251.00));
+    BSTNode node20 = new BSTNode(new Dollar(151.00));
     
+    System.out.println("Node 20:"+ node20.getData().toString());
+
+    bst.insert(node1);
+    bst.insert(node2);
+    bst.insert(node3);
+    bst.insert(node4);
+    bst.insert(node5);
+    bst.insert(node6);
+    bst.insert(node7);
+    bst.insert(node8);
+    bst.insert(node9);
+    bst.insert(node10);
+    bst.insert(node11);
+    bst.insert(node12);
+    bst.insert(node13);
+    bst.insert(node14);
+    bst.insert(node15);
+    bst.insert(node16);
+    bst.insert(node17);
+    bst.insert(node18);
+    bst.insert(node19);
+    bst.insert(node20);
+   
+   
     bst.inOrder();
+    bst.preOrder();
+    bst.postOrder();
+    System.out.println("BST Search:" + bst.search(node20.getData()));
+    
+    
   }
 	public void createFile() {
 		try {

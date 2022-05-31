@@ -18,11 +18,11 @@ public class BSTNode {
 	}
 	
 	public void setLeft(BSTNode left){
-		left = left;
+		this.left = left;
 	}
 	
 	public void setRight(BSTNode right){
-		right = right;
+		this.right = right;
 	}
 	
 	public Dollar getData(){

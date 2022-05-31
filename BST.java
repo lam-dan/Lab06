@@ -1,5 +1,6 @@
 public class BST{
 	private BSTNode root;
+	private int count;
 	
 	  /**
    * Constructors for BS
@@ -7,7 +8,6 @@ public class BST{
 	public BST(){
 		root = null;
 	}
-
 	
 	/** For the BST, implement the four traversal methods as well as 
 	 * methods for the usual search, insert, delete, print, count, isEmpty, 
@@ -22,23 +22,27 @@ public class BST{
 	 **/
 	 
 	public void inOrder() { 
-        inOrderRecursive(root); 
+		inOrderRecursive(this.root);
     } 
 	
 	public void inOrderRecursive(BSTNode node){
-		System.out.print("inOrderRecursive node value: " + node.getData().toString() + " ");
-		if(node == null){
+		StringBuilder sb = new StringBuilder("");
+		if(node != null){
 			inOrderRecursive(node.getLeft());
-			System.out.print("if node == null" + node.getData().toString() + " ");
+			printNode(node);
 			inOrderRecursive(node.getRight());
-		} 
+		}
 	}
 	
-	public void preOrder(BSTNode node){
+	public void preOrder() { 
+        preOrderRecursive(this.root); 
+    } 
+	
+	public void preOrderRecursive(BSTNode node){
 		if (node != null) {
-			System.out.print(node.getData() + " ");
-			preOrder(node.getLeft());
-			preOrder(node.getRight());
+			printNode(node);
+			preOrderRecursive(node.getLeft());
+			preOrderRecursive(node.getRight());
 		}
 	}
 	
@@ -47,12 +51,17 @@ public class BST{
 	 * Go to left-subtree
 	 * Go to right-subtree
 	 * */
+
+	public void postOrder() { 
+		postOrderRecursive(this.root); 
+    } 
+	 
 	
-	public void postOrder(BSTNode node){
+	public void postOrderRecursive(BSTNode node){
 		if (node != null) {
-			System.out.print(node.getData() + " ");
-			postOrder(node.getLeft());
-			postOrder(node.getRight());
+			postOrderRecursive(node.getLeft());
+			postOrderRecursive(node.getRight());
+			printNode(node);
 			}
 		}
 		
@@ -86,66 +95,85 @@ public class BST{
 	/** if N is the data of a node, X < N goes on left subtree, X >= N 
 	 * goes on the right subtree. Assume no duplicate data entered in the tree.
 	 */
-	public void insert(Dollar data){
-		root = insertRecursive(root, data);
+	
+	public BSTNode insert(BSTNode node){
+			if (getRoot() == null) {
+				setRoot(node);
+			} else {
+				BSTNode currNode = getRoot();
+
+				while (true) {
+					if (currNode.getData().isGreater((node.getData()))) {
+						if (currNode.getLeft() == null) {
+							currNode.setLeft(node);
+							break;
+						} else {
+							currNode = currNode.getLeft();
+						}
+					}
+					else {
+						if (currNode.getRight() == null) {
+							currNode.setRight(node);
+							break;
+						} else {
+							currNode = currNode.getRight();
+						}
+					}
+				}
+			}
+
+			setCount(getCount()+1);
+			return node;
+		}
+	
+	
+	public void printNode(BSTNode node){
+		System.out.println(node.getData().toString());
 	}
 	
-	public BSTNode insertRecursive(BSTNode root, Dollar data){
+	 
+	 public BSTNode getRoot(){
+		 return root;
+	 }
+	 
+	 public void setRoot(BSTNode node){
+		 root = node;
+	 }
+	 
+	 public void setCount(int count){
+		 this.count = count;
+	 }
+	 
+	 public int getCount(){
+		 return count;
+	 }
+	 
+	 public boolean isEmpty(){
 		if(root == null){
-			//System.out.print("Inserting data: " + data);
-			root = new BSTNode(data);
-			//System.out.println("Root is now: "+ root.getData().toString());
-			return root;
+			return true;
+		} else {
+			return false;
 		}
-		
-		Double dataDouble = parseDouble(data.toString());
-		Double rootDouble = parseDouble(this.root.getData().toString());
-		
-		if(dataDouble < rootDouble){
-			//System.out.println("dataDouble < rootDouble");
-			BSTNode left = root.getLeft();
-			left = insertRecursive(left, data);
-		} else if ( dataDouble > rootDouble){
-			//System.out.println("dataDouble > rootDouble");
-			BSTNode right = root.getRight();
-			right = insertRecursive(right, data);
+	}
+
+	public boolean search(Dollar data){
+		while (getRoot() != null) {
+			if( data.isGreater(getRoot().getData())){
+				getRoot().setRight(getRoot().getRight());
+			} 
+			else if(!data.isGreater(getRoot().getData())){
+				getRoot().setLeft(getRoot().getLeft());
+			}
+			else {
+				System.out.println("True");
+				return true;
+			}
 		}
-		return root;
+		return false;
 	}
 	
-	public Double parseDouble(String data){
-		return Double.parseDouble(data);
-	}
-	
-	/** Search for a particular data value
-	 
-	 
-	public search(){
+	public void delete(){
 		
 	}
-	
-	public delete(){
-		
-		
-	}
-	
-	public print(){
-		
-	}
-	
-	public count(){
-		
-		
-	}
-	
-	public isEmpty(){
-		
-	}
-	
-	public String toString(Dollar data){
-		
-		return data.print();
-	}
-	**/
-	
+
 }
