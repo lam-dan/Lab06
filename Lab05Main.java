@@ -13,12 +13,16 @@
 import java.io.File;  // Import the File class
 import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.FileWriter;   // Import the FileWriter class
+import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Lab05Main {
   
   public static void main(String [] args){
     System.out.println("Welcome to ADT Testing by Daniel Lam and Chitra Srinivasan.");
     System.out.println();
+    Scanner sc = new Scanner(System.in);
+    
     // Initializing HashTable with size 29 elements
     HashTable hashTable = new HashTable(29);
     
@@ -43,36 +47,38 @@ public class Lab05Main {
     hashTable.insert(new Dollar(251.00));
     hashTable.insert(new Dollar(151.00));
     
-    System.out.println("Total dollar items loaded: " + hashTable.getCount());
-    
-    
+    System.out.println("Total dollar items loaded: " + hashTable.getDollarCount());
+    System.out.println("Load Factor: " + hashTable.getLoadFactor());
+    System.out.println("Number of collisions: " + hashTable.getCollisionsCount());
+        
+	double dollar;
+	String answer;
+	
+	while(true){
+		try {
+			System.out.println("Please enter a dollar value to be searched: ");
+			dollar = sc.nextDouble();
+			int index = hashTable.findDollar(new Dollar(dollar));
+			if( index != -1){
+				System.out.println("Dollar found here at index: " + index);
+				System.exit(0);
+				break;
+			} 
+			else {
+				System.out.println("Invalid Data.");
+			}
+			System.out.println("Do you want to check again or end the program?");
+			System.out.println("'Y' to end search again or 'N' to end the program.");
+			answer = sc.next();
+			if(answer.equals("n") || answer.equals("N")){
+				System.exit(0);
+				break;
+			}
+		} catch (InputMismatchException e) {
+			System.out.println("You did not enter a valid number: " + e.getMessage());
+			sc.nextDouble();
+		}
+	
+	}	
   }
-	public void createFile() {
-		try {
-		  File myObj = new File("Lab04.txt");
-		  if (myObj.createNewFile()) {
-			System.out.println("File created: " + myObj.getName());
-		  } else {
-			System.out.println("File already exists.");
-		  }
-		} catch (IOException e) {
-		  System.out.println("An error occurred.");
-		  e.printStackTrace();
-		}
-	}
-	
-	public void writeToFile(String string) {
-		try {
-		  FileWriter myWriter = new FileWriter("Lab04.txt");
-		  myWriter.write(string);
-		  myWriter.close();
-		  System.out.println("Successfully wrote to the file.");
-		} catch (IOException e) {
-		  System.out.println("An error occurred.");
-		  e.printStackTrace();
-		}
-	}
-	
-
-
 }
