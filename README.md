@@ -1,4 +1,4 @@
-#Lab06
+## Lab06
 THIS IS AN OPTIONAL LAB WHICH SHOULD BE DONE AND SUBMITTED INDIVIDUALLY and THERE IS ONLY ONE SUBMISSION DATE FOR THIS LAB.
 
 Follow all code styling and submission instructions as outlined for previous labs.
