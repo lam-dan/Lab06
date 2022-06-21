@@ -50,7 +50,7 @@ public class HashTable{
 		int f = dollar.getCoinValue();
 		int hashKey = (( this.m * w )+ ( this.n * f )) % size;
 		
-		if( getLoadFactor() >= 0.68){
+		if( getLoadFactor() >= 0.75){
 			resize();
 		}
 
@@ -146,14 +146,14 @@ public class HashTable{
 	/**
 	* The search method takes a Dollar object as parameter and gets the key
 	* from the dollar object, hashes the key, resizes based on load factor, 
-	* inserts dollar object into the hash table based on the hashed key index and increases
+	* inserts dollar object into the hash table based on the hashed key index, and increases
 	* count. If the hash table contain this hashKey, we will return the hashKey, since 
 	* it is the index of the hash table.
 	* 
-	* If the hashTable doesn't contian the hashKey, we will return -1.
+	* If the hashTable doesn't contain the hashKey, we will return -1.
 	* 
 	* Otherwise, we will use the quadartic probing formula to generate a new hash key to be used to
-	* search the hash table, until we find a value at and return the hashKey, we will continue
+	* search the hash table, until we find a value and return the hashKey. We will continue
 	* to increase collisions until it's found.
 	* Pre: 
 	* Post: 
@@ -165,7 +165,7 @@ public class HashTable{
 		int f = dollar.getCoinValue();
 		int hashKey = (( this.m * w )+ ( this.n * f )) % size;
 		
-		if( getLoadFactor() >= 0.68){
+		if( getLoadFactor() >= 0.75){
 			resize();
 		}
 		if(this.hashTable[hashKey] != null){
@@ -189,4 +189,6 @@ public class HashTable{
 		}
 		return -1;
 	}
+	
+	
 }
